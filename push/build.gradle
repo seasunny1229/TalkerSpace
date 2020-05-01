@@ -4,7 +4,6 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
-
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -13,19 +12,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
-
-        //个推应用参数
-        manifestPlaceholders = [
-                GETUI_APP_ID : "cAle68TExB7UKZyINNDrV9",
-                GETUI_APP_KEY : "N2KO36hfwc711tVVEKgaA",
-                GETUI_APP_SECRET : "o6l2cvxcTQ6ScSiNP2zT65",
-        ]
-
-        ndk {
-            // 个推所需 CPU 类型的最小集
-            abiFilters "armeabi", "armeabi-v7a", "x86_64", "x86"
-        }
-
     }
 
     buildTypes {
@@ -43,8 +29,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    // 个推
-    implementation 'com.getui:sdk:2.14.0.0'
-
 }
