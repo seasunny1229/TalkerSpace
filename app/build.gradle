@@ -17,6 +17,11 @@ android {
                 GETUI_APP_KEY : "N2KO36hfwc711tVVEKgaA",
                 GETUI_APP_SECRET : "o6l2cvxcTQ6ScSiNP2zT65",
         ]
+
+        ndk {
+            // 个推所需 CPU 类型的最小集
+            abiFilters "armeabi", "armeabi-v7a", "x86_64", "x86"
+        }
     }
     buildTypes {
         release {
@@ -40,4 +45,7 @@ dependencies {
 
     implementation project(path: ':framework')
     implementation project(path: ':push')
+
+    // getui SDK
+    implementation 'com.getui:sdk:2.14.0.0'
 }

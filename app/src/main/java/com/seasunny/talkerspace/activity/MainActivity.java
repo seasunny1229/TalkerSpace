@@ -1,10 +1,10 @@
-package com.seasunny.talkerspace;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.seasunny.talkerspace.activity;
 
 import android.os.Bundle;
 
-import com.seasunny.push.manager.PushModuleManager;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.seasunny.talkerspace.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +12,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        PushModuleManager.getInstance().init(this);
     }
 }
