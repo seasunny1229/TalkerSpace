@@ -1,10 +1,10 @@
 package com.seasunny.talkerspace.getui.manager;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.igexin.sdk.IUserLoggerInterface;
 import com.igexin.sdk.PushManager;
+import com.seasunny.framework.util.LogUtil;
 
 public class GetuiSdkManager {
     private static GetuiSdkManager sInstance;
@@ -21,7 +21,7 @@ public class GetuiSdkManager {
         PushManager.getInstance().setDebugLogger(context, new IUserLoggerInterface() {
             @Override
             public void log(String s) {
-                Log.i("PUSH_LOG",s);
+                LogUtil.e("PUSH_LOG", s);
             }
         });
     }
