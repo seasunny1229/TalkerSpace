@@ -14,10 +14,13 @@ android {
 
         manifestPlaceholders = [
 
-                //个推应用参数
+                //Getui
                 GETUI_APP_ID : "JbmutK8h5fAtPR1gIMAR69",
                 GETUI_APP_KEY : "yNn8L9sI8n8AfhcozJ46P3",
                 GETUI_APP_SECRET : "Wbvsfj9iI67myuVhxk7Lc8",
+
+                // bugly
+                BUGLY_APP_ID : "5c6fcdbdb8"
         ]
 
         ndk {
@@ -50,4 +53,8 @@ dependencies {
 
     // getui SDK
     implementation 'com.getui:sdk:2.14.0.0'
+
+    // bugly SDK
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
 }

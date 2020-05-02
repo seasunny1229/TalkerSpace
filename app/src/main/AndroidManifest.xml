@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data android:name="BUGLY_APPID" android:value="${BUGLY_APP_ID}" />
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>
