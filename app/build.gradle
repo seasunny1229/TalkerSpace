@@ -20,7 +20,10 @@ android {
                 GETUI_APP_SECRET : "Wbvsfj9iI67myuVhxk7Lc8",
 
                 // bugly
-                BUGLY_APP_ID : "5c6fcdbdb8"
+                BUGLY_APP_ID : "5c6fcdbdb8",
+
+                // umeng
+                UMENG_APP_KEY :"5eae16f2978eea082619c368"
         ]
 
         ndk {
@@ -50,6 +53,7 @@ dependencies {
 
     implementation project(path: ':framework')
     implementation project(path: ':push')
+    implementation project(path: ':statistics')
 
     // getui SDK
     implementation 'com.getui:sdk:2.14.0.0'
@@ -57,4 +61,14 @@ dependencies {
     // bugly SDK
     implementation 'com.tencent.bugly:crashreport:latest.release'
     implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+
+    // 友盟基础组件库（所有友盟业务SDK都依赖基础组件库）
+    implementation  'com.umeng.umsdk:common:2.1.0'
+
+    // 下面各SDK根据宿主App是否使用相关业务按需引入。
+    // 友盟统计SDK
+    // 更多可用组件，请参见可用maven列表
+    implementation  'com.umeng.umsdk:analytics:8.1.3'
+
 }

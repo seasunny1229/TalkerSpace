@@ -20,6 +20,7 @@ public class BuglySdkManager {
         try {
             String appKey = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA).metaData.getString("BUGLY_APPID");
             CrashReport.initCrashReport(context, appKey, BuildConfig.DEBUG);
+            //CrashReport.testJavaCrash();
         }catch (PackageManager.NameNotFoundException e){
             e.printStackTrace();
         }
