@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.seasunny.talkerspace.bugly.BuglySdkManager;
 import com.seasunny.talkerspace.getui.manager.GetuiSdkManager;
+import com.seasunny.talkerspace.oss.OssSdkManager;
 import com.seasunny.talkerspace.umeng.UmengSdkManager;
 
 public class MainApplication extends Application {
@@ -13,13 +14,16 @@ public class MainApplication extends Application {
         super.onCreate();
 
         // getui push SDK
-        GetuiSdkManager.getInstance().init(this);
+        //GetuiSdkManager.getInstance().init(this);
 
         // bugly SDK
         //BuglySdkManager.getInstance().init(this);
 
         // umeng
-        UmengSdkManager.getInstance().init(this);
+        //UmengSdkManager.getInstance().init(this);
+
+        // oss
+        OssSdkManager.getInstance().init(this);
 
     }
 }
