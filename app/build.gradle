@@ -54,6 +54,7 @@ dependencies {
     implementation project(path: ':framework')
     implementation project(path: ':push')
     implementation project(path: ':statistics')
+    implementation project(path: ':view')
 
     // getui SDK
     implementation 'com.getui:sdk:2.14.0.0'
@@ -61,7 +62,6 @@ dependencies {
     // bugly SDK
     implementation 'com.tencent.bugly:crashreport:latest.release'
     implementation 'com.tencent.bugly:nativecrashreport:latest.release'
-
 
     // 友盟基础组件库（所有友盟业务SDK都依赖基础组件库）
     implementation  'com.umeng.umsdk:common:2.1.0'
