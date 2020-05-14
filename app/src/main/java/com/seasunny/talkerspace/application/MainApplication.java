@@ -23,7 +23,7 @@ public class MainApplication extends Application {
         //UmengSdkManager.getInstance().init(this);
 
         // oss
-        OssSdkManager.getInstance().init(this);
+        //OssSdkManager.getInstance().init(this);
 
     }
 }
