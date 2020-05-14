@@ -1,2 +1,2 @@
-include ':app', ':framework', ':push', ':statistics'
+include ':app', ':framework', ':push', ':statistics', ':view'
 rootProject.name='TalkerSpace'
