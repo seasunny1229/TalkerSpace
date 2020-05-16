@@ -8,4 +8,10 @@
         <!--设置底部导航颜色-->
         <item name="android:navigationBarColor">@color/colorAccent</item>
     </style>
+
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base">
+        <item name="android:statusBarColor">@null</item>
+    </style>
+
+
 </resources>
