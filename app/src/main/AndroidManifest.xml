@@ -40,6 +40,7 @@
         </activity>
         <activity android:name=".activity.AccountActivity"/>
         <activity android:name=".activity.PersonalActivity"/>
+        <activity android:name=".activity.UserActivity"/>
 
         <!--service -->
         <service
