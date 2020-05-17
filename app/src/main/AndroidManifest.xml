@@ -43,6 +43,7 @@
         <activity android:name=".activity.UserActivity"/>
         <activity android:name=".activity.LaunchActivity"/>
         <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.MessageActivity"/>
 
         <!--service -->
         <service
