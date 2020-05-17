@@ -33,7 +33,7 @@ ext{
     buildToolsVersion =  "29.0.3"
 
     applicationId =  "com.seasunny.talkerspace"
-    minSdkVersion =  15
+    minSdkVersion =  17
     targetSdkVersion = 29
     versionCode = 1
     versionName =  "1.0"
