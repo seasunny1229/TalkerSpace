@@ -41,6 +41,8 @@
         <activity android:name=".activity.AccountActivity"/>
         <activity android:name=".activity.PersonalActivity"/>
         <activity android:name=".activity.UserActivity"/>
+        <activity android:name=".activity.LaunchActivity"/>
+        <activity android:name=".activity.SearchActivity"/>
 
         <!--service -->
         <service
