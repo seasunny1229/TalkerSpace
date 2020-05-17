@@ -37,6 +37,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.AccountActivity">
+        </activity>
+
         <service
             android:name="com.seasunny.talkerspace.getui.service.GetuiService"
             android:exported="true"
