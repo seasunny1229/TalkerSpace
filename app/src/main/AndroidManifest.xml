@@ -44,6 +44,7 @@
         <activity android:name=".activity.LaunchActivity"/>
         <activity android:name=".activity.SearchActivity"/>
         <activity android:name=".activity.MessageActivity"/>
+        <activity android:name=".activity.GroupCreateActivity"/>
 
         <!--service -->
         <service
