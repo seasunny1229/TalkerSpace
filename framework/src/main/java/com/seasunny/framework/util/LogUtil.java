@@ -8,7 +8,7 @@ import com.seasunny.framework.BuildConfig;
 public class LogUtil {
 
     public static void lifecycle(Class clazz, String text){
-        i(clazz, text);
+        e(clazz, text);
     }
 
     public static void d(Class clazz, String text){

@@ -85,4 +85,20 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     // endregion
+
+    // region functional button
+    // 点击系统返回键
+    @Override
+    public void onBackPressed() {
+        LogUtil.lifecycle(getClass(), "onBackPressed");
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        LogUtil.lifecycle(getClass(), "onSupportNavigateUp");
+        return super.onSupportNavigateUp();
+    }
+
+    // endregion
 }

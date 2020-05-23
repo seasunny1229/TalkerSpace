@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -74,4 +75,6 @@ dependencies {
     // 阿里云OSS
     implementation 'com.aliyun.dpa:oss-android-sdk:2.9.3'
 
+    // butterknife compiler
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 }
