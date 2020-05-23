@@ -10,9 +10,12 @@ import com.seasunny.framework.fragment.BaseAppFragment;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class BaseAppActivity extends BaseActivity {
 
+    // butter knife unbinder
+    private Unbinder mUnbinder;
 
     // region config
     protected abstract int getLayoutResID();
@@ -25,7 +28,13 @@ public abstract class BaseAppActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResID());
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUnbinder.unbind();
     }
 
     // endregion

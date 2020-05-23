@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="extra_fragment_active_empty">active empty</string>
+    <string name="extra_fragment_contact_empty">contact empty</string>
+    <string name="extra_fragment_group_empty">group empty</string>
+
+</resources>

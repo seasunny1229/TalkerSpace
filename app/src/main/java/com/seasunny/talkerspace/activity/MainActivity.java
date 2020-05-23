@@ -5,12 +5,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.seasunny.framework.activity.BaseAppActivity;
-import com.seasunny.framework.util.LogUtil;
 import com.seasunny.talkerspace.R;
 
+import butterknife.BindArray;
 import butterknife.BindView;
 
 public class MainActivity extends BaseAppActivity {
@@ -18,8 +20,8 @@ public class MainActivity extends BaseAppActivity {
     @BindView(R.id.navigation)
     BottomNavigationView mNavigation;
 
-    @BindView(R.id.txt_title)
-    TextView textView;
+    @BindArray(R.array.arrays_main_fragment_classes)
+    String[] fragmentClasses;
 
     @Override
     protected int getLayoutResID() {
@@ -30,10 +32,33 @@ public class MainActivity extends BaseAppActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // init fragments
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        for(int i=0;i<mNavigation.getMenu().size();i++){
+            MenuItem menuItem = mNavigation.getMenu().getItem(i);
+            Fragment fragment = getSupportFragmentManager().getFragmentFactory().instantiate(getClassLoader(), fragmentClasses[i]);
+            fragmentTransaction.add(R.id.lay_container, fragment, menuItem.getTitle().toString());
+            if(i != 0) {
+                fragmentTransaction.hide(fragment);
+            }
+        }
+        fragmentTransaction.commitNow();
+
+        // navigation
         mNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                LogUtil.lifecycle(MainActivity.class, menuItem.getTitle().toString());
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                Fragment fragment = getSupportFragmentManager().findFragmentByTag(menuItem.getTitle().toString());
+                for(Fragment target : getSupportFragmentManager().getFragments()){
+                    if(target.isVisible()){
+                        if(target != fragment){
+                            ft.show(fragment);
+                            ft.hide(target);
+                        }
+                    }
+                }
+                ft.commit();
                 return true;
             }
         });

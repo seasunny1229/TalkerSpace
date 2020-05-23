@@ -1,8 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.seasunny.talkerspace.fragment.ActiveFragment">
+    android:orientation="vertical"
+    tools:context="com.seasunny.talkerspace.fragment.main.ActiveFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
@@ -17,9 +18,31 @@
         android:visibility="gone"
         tools:targetApi="lollipop" />
 
-    <com.seasunny.talkerspace.view.EmptyView
-        android:id="@+id/empty"
+    <LinearLayout
+        android:id="@+id/fragment_active_empty"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/fragment_active_empty_image"
+            android:src="@drawable/status_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/fragment_active_empty_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/extra_fragment_active_empty"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_28" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

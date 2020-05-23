@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="arrays_main_fragment_classes">
+        <item>com.seasunny.talkerspace.fragment.main.ActiveFragment</item>
+        <item>com.seasunny.talkerspace.fragment.main.GroupFragment</item>
+        <item>com.seasunny.talkerspace.fragment.main.ContactFragment</item>
+    </string-array>
+
+</resources>
