@@ -2,7 +2,6 @@ package com.seasunny.talkerspace.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -37,7 +36,7 @@ public class MainActivity extends BaseAppActivity {
         for(int i=0;i<mNavigation.getMenu().size();i++){
             MenuItem menuItem = mNavigation.getMenu().getItem(i);
             Fragment fragment = getSupportFragmentManager().getFragmentFactory().instantiate(getClassLoader(), fragmentClasses[i]);
-            fragmentTransaction.add(R.id.lay_container, fragment, menuItem.getTitle().toString());
+            fragmentTransaction.add(R.id.lay_container, fragment, String.valueOf(menuItem.getItemId()));
             if(i != 0) {
                 fragmentTransaction.hide(fragment);
             }
@@ -49,7 +48,7 @@ public class MainActivity extends BaseAppActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                Fragment fragment = getSupportFragmentManager().findFragmentByTag(menuItem.getTitle().toString());
+                Fragment fragment = getSupportFragmentManager().findFragmentByTag(String.valueOf(menuItem.getItemId()));
                 for(Fragment target : getSupportFragmentManager().getFragments()){
                     if(target.isVisible()){
                         if(target != fragment){
